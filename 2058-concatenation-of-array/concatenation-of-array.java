@@ -1,16 +1,12 @@
 class Solution {
     public int[] getConcatenation(int[] nums) {
-        int newarr[] = new int[nums.length * 2];
+        int n=nums.length;
+        int ans[] = new int[nums.length * 2];
         int index = 0;
 
-        for (int i = 0; i < nums.length; i++, index++) {
-            newarr[index] = nums[i];
-        }
+        System.arraycopy(nums, 0, ans, 0, n);
+        System.arraycopy(nums, 0, ans, n, n);
 
-        for (int i = 0; i < nums.length; i++, index++) {
-            newarr[index] = nums[i];
-        }
-
-        return newarr;
+        return ans;
     }
 }
